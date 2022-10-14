@@ -6,7 +6,7 @@ import time
 
 columns = ['updated_at', 'status']
 deelgebieden = ['Alpha', 'Bravo', 'Charlie', 'Delta', 'Echo', 'Foxtrot']
-sleeptime = 2
+sleeptime = 20
 t = 0
 
 with open('data.pickle', 'rb') as handle:
@@ -29,7 +29,7 @@ while True:
     time.sleep(sleeptime)
     t += sleeptime
     # At the end of the run, save pickle and write to csv
-    if t > 5:
+    if t > 345:
         with open('data.pickle', 'wb') as handle:
             pickle.dump(dict1, handle, protocol=pickle.HIGHEST_PROTOCOL)
         for dg in deelgebieden:
