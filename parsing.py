@@ -6,7 +6,7 @@ import time
 
 columns = ['updated_at', 'status']
 deelgebieden = ['Alpha', 'Bravo', 'Charlie', 'Delta', 'Echo', 'Foxtrot']
-sleeptime = 30
+sleeptime = 20
 t = 0
 
 with open('data.pickle', 'rb') as handle:
@@ -20,7 +20,7 @@ while True:
         dict1[dg_data["name"]][dg_data['updated_at']] = dg_data['status']
     time.sleep(sleeptime)
     t += sleeptime
-    if t > 315:
+    if t > 345:
         with open('data.pickle', 'wb') as handle:
             pickle.dump(dict1, handle, protocol=pickle.HIGHEST_PROTOCOL)
         for dg in deelgebieden:
