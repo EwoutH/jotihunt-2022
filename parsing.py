@@ -6,21 +6,30 @@ import time
 
 columns = ['updated_at', 'status']
 deelgebieden = ['Alpha', 'Bravo', 'Charlie', 'Delta', 'Echo', 'Foxtrot']
-sleeptime = 20
+sleeptime = 2
 t = 0
 
 with open('data.pickle', 'rb') as handle:
     dict1 = pickle.load(handle)
 
 while True:
-    response = json.loads(requests.get("https://jotihunt.nl/api/2.0/areas").text)
+    # Try fetching the API data
+    try:
+        response = json.loads(requests.get("https://jotihunt.nl/api/2.0/areas").text)
+    except:
+        # Sleep and try again on fail
+        print("Failed parsing")
+        time.sleep(sleeptime)
+        t += sleeptime
+        continue
+    # Process the data to different dicts
     data = response['data']
-    print(data)
     for dg_data in data:
         dict1[dg_data["name"]][dg_data['updated_at']] = dg_data['status']
     time.sleep(sleeptime)
     t += sleeptime
-    if t > 345:
+    # At the end of the run, save pickle and write to csv
+    if t > 5:
         with open('data.pickle', 'wb') as handle:
             pickle.dump(dict1, handle, protocol=pickle.HIGHEST_PROTOCOL)
         for dg in deelgebieden:
