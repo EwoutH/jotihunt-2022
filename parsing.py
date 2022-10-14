@@ -29,7 +29,7 @@ while True:
     time.sleep(sleeptime)
     t += sleeptime
     # At the end of the run, save pickle and write to csv
-    if t > 345:
+    if t > 875:
         with open('data.pickle', 'wb') as handle:
             pickle.dump(dict1, handle, protocol=pickle.HIGHEST_PROTOCOL)
         for dg in deelgebieden:

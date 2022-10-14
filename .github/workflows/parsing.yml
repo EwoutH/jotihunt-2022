@@ -3,7 +3,7 @@
 name: Parsing
 on:
   schedule:
-    - cron: "0,6,12,18,24,30,36,42,48,54 * * * *"
+    - cron: "0,15,30,45 * * * *"
   push:
     paths:
      - ".github/workflows/parsing.yml"
@@ -13,7 +13,7 @@ on:
 jobs:
   parsing:
     runs-on: ubuntu-latest
-    timeout-minutes: 7
+    timeout-minutes: 20
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v4
