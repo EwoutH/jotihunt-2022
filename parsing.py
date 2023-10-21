@@ -9,8 +9,15 @@ deelgebieden = ['Alpha', 'Bravo', 'Charlie', 'Delta', 'Echo', 'Foxtrot']
 sleeptime = 20
 t = 0
 
-with open('data.pickle', 'rb') as handle:
-    dict1 = pickle.load(handle)
+
+try:
+    with open('data.pickle', 'rb') as handle:
+        dict1 = pickle.load(handle)
+except:
+    # Create dict with deelgebieden as keys
+    dict1 = dict.fromkeys(deelgebieden)
+    for key in dict1.keys():
+        dict1[key] = {}
 
 while True:
     # Try fetching the API data
