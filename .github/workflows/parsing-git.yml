@@ -3,7 +3,7 @@
 name: Parsing
 on:
   schedule:
-#    - cron: "0 */3 * * *"
+    - cron: "0 */3 * * *"
   push:
     paths:
      - ".github/workflows/parsing-git.yml"
