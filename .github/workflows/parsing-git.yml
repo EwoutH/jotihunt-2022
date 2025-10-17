@@ -3,7 +3,7 @@
 name: Parsing
 on:
   schedule:
-#    - cron: "0 */3 * * *"
+    - cron: "0 */3 * * *"
   push:
     paths:
      - ".github/workflows/parsing-git.yml"
@@ -15,10 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 240
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v4
+    - uses: actions/checkout@v5
+    - uses: actions/setup-python@v6
       with:
-        python-version: "3.10"
+        python-version: "3.13"
         cache: 'pip'
     - run: pip install -r requirements.txt
     - run: python parsing.py
