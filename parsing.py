@@ -5,7 +5,7 @@ import pandas as pd
 import time
 
 columns = ['updated_at', 'status']
-deelgebieden = ['Alpha', 'Bravo', 'Charlie', 'Delta', 'Echo', 'Foxtrot']
+deelgebieden = ['Alpha', 'Bravo', 'Charlie', 'Delta', 'Echo', 'Foxtrot', 'Golf', 'Hotel', 'Oscar']
 sleeptime = 20
 t = 0
 

@@ -7,7 +7,7 @@ from git import Repo
 import os
 
 columns = ['updated_at', 'status']
-deelgebieden = ['Alpha', 'Bravo', 'Charlie', 'Delta', 'Echo', 'Foxtrot']
+deelgebieden = ['Alpha', 'Bravo', 'Charlie', 'Delta', 'Echo', 'Foxtrot', 'Golf', 'Hotel', 'Oscar']
 sleeptime = 2
 t = 0
 
